@@ -1,5 +1,5 @@
 angular.module("sputnikServices").factory('segmentEffortsRepository', ['$resource', function ($resource) {
-    return $resource('/strava/segment_efforts');
+    return $resource('/strava/segment_efforts/:segmentEffortId', {segmentEffortId:'@id'});
 }]);
 
 

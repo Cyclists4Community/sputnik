@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row" ng-if="message.success !== undefined">
+                <div class="col-lg-12">
+                    <div class="alert alert-success" role="alert">{{message.success}}</div>
+                </div>
+            </div>
+            <div class="row" ng-if="message.error !== undefined">
+                <div class="col-lg-12">
+                    <div class="alert alert-danger" role="alert">{{message.error}}</div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h4>${{totalDonations}} donated so far!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-3 text-center">
+                            <sputnik-map polyline="donationEvent.polyline" size="250"></sputnik-map>
+                        </div>
+                        <div class="col-md-8 col-lg-9">
+                            <sputnik-donation-form donation-event="donationEvent" message="message" callback="getTotalDonations"></sputnik-donation-form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

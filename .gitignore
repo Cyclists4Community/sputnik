@@ -1,0 +1,12 @@
+*.iml
+.idea
+.gradle
+build
+out
+bower_components
+node_modules
+classes
+src/main/webapp/resources/js/*
+src/main/webapp/js/constants.js
+src/main/webapp/resources/css/*
+.env

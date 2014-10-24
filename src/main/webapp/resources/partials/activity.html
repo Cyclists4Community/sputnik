@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+                            <sputnik-map polyline="activity.mapPolyline" size="235"></sputnik-map>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>{{activity.name}}</h3>
+                            <a href="http://www.strava.com/activities/{{activity.id}}" class="strava">View on Strava</a>
+                            <div>Distance: {{activity.distance}}m</div>
+                            <div>Date: {{activity.date | date : 'short'}}</div>
+                            <div>Elapsed Time: {{activity.elapsedTime}}s</div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Campaigns</h3>
+                            <div ng-repeat="campaign in campaigns">
+                                <sputnik-donation-event-button campaign="campaign" activity="activity" button-class="btn-lg"></sputnik-donation-event-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <sputnik-segment-efforts segment-efforts="activity.segmentEfforts" activity="activity"></sputnik-segment-efforts>
+</div>

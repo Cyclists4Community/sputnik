@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="media">
+            <a class="pull-left">
+                <sputnik-map polyline="segment.mapPolyline" size="64"></sputnik-map>
+            </a>
+
+            <div class="media-body">
+                <h4 class="media-heading inline">{{segmentEffort.name}}</h4>
+                <a href="http://www.strava.com/activities/{{segmentEffort.activityId}}/segments/{{segmentEffort.id}}" class="strava">View
+                    on Strava</a>
+
+                <div>
+                <span ng-repeat="campaign in segmentEffort.campaigns">
+                    <sputnik-donation-event-button campaign="campaign" activity="activity" button-class="btn-sm"></sputnik-donation-event-button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

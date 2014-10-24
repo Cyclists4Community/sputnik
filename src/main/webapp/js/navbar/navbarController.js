@@ -1,7 +1,7 @@
 (function () {
-    angular.module("navbar").controller("navbarController", ['$scope', '$http', '$window', 'profileRepository', 'authorizationResource',
-        function ($scope, $http, $window, profileRepository, authorizationResource) {
-            profileRepository.get().$promise.then(setProfile);
+    angular.module("navbar").controller("navbarController", ['$scope', '$http', '$window', 'stravaProfileResource', 'authorizationResource',
+        function ($scope, $http, $window, stravaProfileResource, authorizationResource) {
+            stravaProfileResource.get().$promise.then(setProfile);
             authorizationResource.get().$promise.then(setAdmin);
 
             $scope.signout = function () {

@@ -1,4 +1,4 @@
-package sputnik.home;
+package com.sputnik.home;
 
 import com.sputnik.home.HomeController;
 import org.junit.Before;

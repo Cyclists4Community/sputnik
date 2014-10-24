@@ -2,8 +2,28 @@
     <div class="row">
         <div class="col-sm-8 col-lg-6">
             <div ng-repeat="activity in activities | orderBy: 'date':true" sputnik-activity="activity"></div>
+
+            <div class="panel panel-default" ng-show="activities.length === 0">
+                <div class="panel-body">
+                    <h3 class="media-heading">Uh oh!</h3>
+                    <p>
+                        Looks like you haven't recorded any <a class="strava" href="http://www.strava.com">Strava</a> activity. You'll
+                        see your rides here once you record new activity.
+                    </p>
+                </div>
+            </div>
+
         </div>
         <div class="col-sm-4 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="media-heading">Contribute!</h3>
+                    <p>
+                        Click on the highlighted activities on the left to donate to a campaign.
+                    </p>
+                </div>
+            </div>
+
             <sputnik-donation ng-repeat="donation in donations | orderBy: 'createdAt':true" donation="donation"></sputnik-donation>
         </div>
     </div>

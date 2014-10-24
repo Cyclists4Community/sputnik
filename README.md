@@ -84,6 +84,10 @@ this user in the `users` table.
 
 ### Deployment
 
-Deploy your app to [PWS](https://run.pivotal.io/) using `./gradlew clean build deploy`. Connect to the ElephantSQL 
-database on PWS and run migrations from `src/test/resources/migration.sql` to set up your database.
+Deploy your app to [PWS](https://run.pivotal.io/) using the following steps:
 
+1. `grunt`
+1. `./gradlew clean build deploy`
+
+Connect to the ElephantSQL 
+database on PWS and run migrations from `src/test/resources/migration.sql` to set up your database.

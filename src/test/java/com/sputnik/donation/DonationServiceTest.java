@@ -1,9 +1,8 @@
 package com.sputnik.donation;
 
 import com.sputnik.campaign.Campaign;
-import com.sputnik.campaign.CampaignService;
-import com.sputnik.persistence.User;
-import com.sputnik.persistence.UserRepository;
+import com.sputnik.user.User;
+import com.sputnik.user.UserRepository;
 import com.stripe.model.Charge;
 import junit.framework.TestCase;
 import org.junit.Test;

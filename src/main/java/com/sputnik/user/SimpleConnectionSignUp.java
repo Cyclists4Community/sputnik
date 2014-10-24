@@ -1,8 +1,6 @@
 package com.sputnik.user;
 
 
-import com.sputnik.persistence.User;
-import com.sputnik.persistence.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionSignUp;

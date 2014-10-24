@@ -1,7 +1,7 @@
 package com.sputnik.donation;
 
-import com.sputnik.persistence.User;
-import com.sputnik.persistence.UserRepository;
+import com.sputnik.user.User;
+import com.sputnik.user.UserRepository;
 import com.stripe.model.Charge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

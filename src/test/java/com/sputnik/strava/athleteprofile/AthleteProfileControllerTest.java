@@ -13,14 +13,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class ProfileControllerTest {
+public class AthleteProfileControllerTest {
     @Mock
     AthleteProfileService athleteProfileService;
 
     MockMvc mockMvc;
 
     @InjectMocks
-    ProfileController controller;
+    AthleteProfileController controller;
 
     @Before
     public void setup() {

@@ -1,8 +1,7 @@
 package com.sputnik.authorization;
 
-import com.sputnik.authorization.AuthorizationService;
-import com.sputnik.persistence.User;
-import com.sputnik.persistence.UserRepository;
+import com.sputnik.user.User;
+import com.sputnik.user.UserRepository;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;

@@ -4,11 +4,11 @@
         <ul class="nav navbar-nav navbar-right">
 
             <li class="dropdown">
-                <a class="avatar-small"><img ng-src="{{profile.avatarMedium}}"
-                                             ng-show="profile.avatarMedium != undefined"
+                <a class="avatar-small"><img ng-src="{{stravaProfile.avatarMedium}}"
+                                             ng-show="stravaProfile.avatarMedium != undefined"
                                              alt="avatar"
                                              class="img-rounded"></a>
-                <a class="dropdown-toggle" data-toggle="dropdown">{{profile.name}}<span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown">{{profile.email}}<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#/admin" ng-show="admin">Admin console</a></li>
                     <li><a href="#/activities">My activities</a></li>

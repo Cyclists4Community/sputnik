@@ -1,7 +1,7 @@
 package com.sputnik.authorization;
 
-import com.sputnik.persistence.User;
-import com.sputnik.persistence.UserRepository;
+import com.sputnik.user.User;
+import com.sputnik.user.UserRepository;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;

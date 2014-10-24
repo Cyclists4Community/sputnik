@@ -1,4 +1,4 @@
-package com.sputnik.persistence;
+package com.sputnik.user;
 
 import javax.persistence.*;
 

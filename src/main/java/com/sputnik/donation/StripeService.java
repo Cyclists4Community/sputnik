@@ -1,7 +1,7 @@
 package com.sputnik.donation;
 
 import com.sputnik.campaign.Campaign;
-import com.sputnik.persistence.User;
+import com.sputnik.user.User;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;

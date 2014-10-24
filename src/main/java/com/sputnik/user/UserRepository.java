@@ -1,4 +1,4 @@
-package com.sputnik.persistence;
+package com.sputnik.user;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

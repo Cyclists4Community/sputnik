@@ -1,17 +1,23 @@
 (function () {
-    angular.module("navbar").controller("navbarController", ['$scope', 'profileRepository', '$http', '$window', function ($scope, profileRepository, $http, $window) {
-        profileRepository.get().$promise.then(setProfile);
+    angular.module("navbar").controller("navbarController", ['$scope', '$http', '$window', 'profileRepository', 'authorizationResource',
+        function ($scope, $http, $window, profileRepository, authorizationResource) {
+            profileRepository.get().$promise.then(setProfile);
+            authorizationResource.get().$promise.then(setAdmin);
 
-        $scope.signout = function () {
-            $http.post('/signout', {}).then(redirectToHome);
-        };
+            $scope.signout = function () {
+                $http.post('/signout', {}).then(redirectToHome);
+            };
 
-        function setProfile(result) {
-            $scope.profile = result;
-        }
+            function setProfile(result) {
+                $scope.profile = result;
+            }
 
-        function redirectToHome() {
-            $window.location.href = '/';
-        }
-    }]);
+            function setAdmin(authorities) {
+                $scope.admin = authorities.admin;
+            }
+
+            function redirectToHome() {
+                $window.location.href = '/';
+            }
+        }]);
 })();

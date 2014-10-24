@@ -1,7 +1,8 @@
-package com.sputnik.admin;
+package com.sputnik.authorization;
 
 import com.sputnik.persistence.User;
 import com.sputnik.persistence.UserRepository;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Service;
@@ -29,5 +30,16 @@ public class AuthorizationService {
 
     public static String getAdminRole() {
         return ADMIN_ROLE;
+    }
+
+    public AuthorizationResponse getAuthorizationResponse(Authentication authentication) {
+        AuthorizationResponse authorizationResponse = new AuthorizationResponse();
+        authorizationResponse
+                .setAdmin(
+                        authentication.getAuthorities().stream()
+                                .anyMatch(a -> a.getAuthority().equals(ADMIN_ROLE))
+                );
+
+        return authorizationResponse;
     }
 }

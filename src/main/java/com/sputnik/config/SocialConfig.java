@@ -1,6 +1,6 @@
 package com.sputnik.config;
 
-import com.sputnik.admin.AuthorizationService;
+import com.sputnik.authorization.AuthorizationService;
 import com.sputnik.signin.SimpleSignInAdapter;
 import com.sputnik.user.SimpleConnectionSignUp;
 import org.springframework.context.annotation.Bean;

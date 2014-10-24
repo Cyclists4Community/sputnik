@@ -1,7 +1,7 @@
 (function () {
 
-    angular.module("security", ["ngRoute"]);
-    angular.module("navbar", ["ngResource"]);
+    angular.module("security", ["ngResource"]);
+    angular.module("navbar", ["ngResource", "security"]);
     angular.module("segmentServices", ['ngResource']);
 
     angular.module('donationEvents', ['ngResource', 'campaigns', 'constants']);

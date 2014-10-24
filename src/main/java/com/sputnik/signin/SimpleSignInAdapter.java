@@ -1,6 +1,6 @@
 package com.sputnik.signin;
 
-import com.sputnik.admin.AuthorizationService;
+import com.sputnik.authorization.AuthorizationService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.savedrequest.RequestCache;

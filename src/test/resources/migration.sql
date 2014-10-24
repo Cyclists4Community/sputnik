@@ -58,3 +58,7 @@ create table donationevents (
 alter table donations drop column campaignid;
 
 alter table donations add column donationeventid int;
+
+alter table donationevents alter column polyline type text;
+
+alter table campaigns alter column description type text;

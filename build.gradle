@@ -28,7 +28,7 @@ targetCompatibility = 1.8
 task(deploy, dependsOn: build) << {
     def warFile = "build/libs/sputnik-" + version + ".war"
     def buildpack = "https://github.com/spring-io/java-buildpack"
-    def appName = "sputnik"
+    def appName = "sputnik2"
 
     println "running: cf push $appName -p $warFile -b $buildpack"
 

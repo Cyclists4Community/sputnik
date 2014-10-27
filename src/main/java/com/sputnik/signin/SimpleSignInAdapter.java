@@ -1,6 +1,7 @@
 package com.sputnik.signin;
 
 import com.sputnik.authorization.AuthorizationService;
+import com.sputnik.user.UserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.savedrequest.RequestCache;
@@ -19,16 +20,20 @@ public class SimpleSignInAdapter implements SignInAdapter {
 
     private final RequestCache requestCache;
     private final AuthorizationService authorizationService;
+    private final UserService userService;
 
     @Inject
-    public SimpleSignInAdapter(RequestCache requestCache, AuthorizationService authorizationService) {
+    public SimpleSignInAdapter(RequestCache requestCache, AuthorizationService authorizationService, UserService userService) {
         this.requestCache = requestCache;
         this.authorizationService = authorizationService;
+        this.userService = userService;
     }
 
     @Override
     public String signIn(String localUserId, Connection<?> connection, NativeWebRequest request) {
         List<GrantedAuthority> authorities = authorizationService.getAuthorities(localUserId);
+
+        userService.updateEmail(localUserId, connection.fetchUserProfile().getEmail());
 
         SignInUtils.signin(localUserId, authorities);
         return extractOriginalUrl(request);

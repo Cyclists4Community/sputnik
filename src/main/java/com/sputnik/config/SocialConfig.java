@@ -3,6 +3,7 @@ package com.sputnik.config;
 import com.sputnik.authorization.AuthorizationService;
 import com.sputnik.signin.SimpleSignInAdapter;
 import com.sputnik.user.SimpleConnectionSignUp;
+import com.sputnik.user.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -38,6 +39,9 @@ public class SocialConfig implements SocialConfigurer {
     private SimpleConnectionSignUp simpleConnectionSignUp;
 
     @Inject
+    UserService userService;
+
+    @Inject
     private AuthorizationService authorizationService;
 
     @Override
@@ -59,7 +63,7 @@ public class SocialConfig implements SocialConfigurer {
 
     @Bean
     public ProviderSignInController providerSignInController(ConnectionFactoryLocator connectionFactoryLocator, UsersConnectionRepository usersConnectionRepository) {
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SimpleSignInAdapter(new HttpSessionRequestCache(), authorizationService));
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SimpleSignInAdapter(new HttpSessionRequestCache(), authorizationService, userService));
     }
 
     @Bean

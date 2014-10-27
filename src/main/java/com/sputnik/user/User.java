@@ -33,4 +33,8 @@ public class User {
     public boolean getAdmin() {
         return admin;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

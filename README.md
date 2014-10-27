@@ -7,14 +7,10 @@ Sputnik serves as a front end for collecting donations based on Strava activity.
 ### Local Development Environment Setup
 
 - Install Java 1.8.
-- Run `brew update`
-- Run `brew install node`
-- Run `npm install`
-- Run `npm install -g grunt-cli`
-
-- Install bower : `npm install bower`.
-- Install karma: `npm install karma-jasmine@2_0 --save-dev`.
-
+- Run `brew update && brew install node` to install node.
+- Run `npm install && npm install -g grunt-cli karma-cli bower` to install javascript build dependencies.
+- Run `bower install` to install javascript libraries.
+- Run `grunt` to build javascript files.
 - Update application.yml with your postgres information.
 - Run `migrations.sql in test/resources`.
 
